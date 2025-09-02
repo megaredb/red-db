@@ -1,0 +1,19 @@
+[package]
+name = "red-db-server"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[dependencies]
+config = { version = "0.15.15", default-features = false, features = ["toml"] }
+red-db-core = { path = "../red-db-core" }
+serde = { version = "1.0.219", features = ["derive"] }
+tokio = { workspace = true }
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+bincode = { workspace = true }
+thiserror = { workspace = true }
+
+[dev-dependencies]
+red-db-client = { path = "../red-db-client" }
+tempfile = { workspace = true }

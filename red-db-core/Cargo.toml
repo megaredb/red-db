@@ -1,0 +1,18 @@
+[package]
+name = "red-db-core"
+version.workspace = true
+authors.workspace = true
+edition.workspace = true
+
+[dependencies]
+ahash = "0.8.12"
+arc-swap = "1.7.1"
+bincode = { workspace = true }
+rpds = "1.1.1"
+thiserror = { workspace = true }
+tokio = { workspace = true }
+tracing = { workspace = true }
+
+[dev-dependencies]
+tokio = { workspace = true, features = ["time"] }
+tempfile = { workspace = true }

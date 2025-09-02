@@ -1,0 +1,31 @@
+[workspace]
+members = ["red-db-client", "red-db-core", "red-db-server"]
+resolver = "3"
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Yevhen Chmut <evgeniychmut@gmail.com>"]
+edition = "2024"
+
+[workspace.dependencies]
+tokio = { version = "1.47.1", default-features = false, features = [
+    "rt-multi-thread",
+    "macros",
+    "net",
+    "signal",
+    "fs",
+    "sync",
+    "io-util",
+] }
+bincode = "2.0.1"
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.20", features = ["env-filter"] }
+thiserror = "2.0.16"
+tempfile = "3.21.0"
+
+[profile.release]
+opt-level = 'z'
+lto = true
+codegen-units = 1
+panic = 'abort'
+strip = true
